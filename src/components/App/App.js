@@ -4,6 +4,7 @@ import './App.css';
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
 import Favorites from '../Favorites/Favorites'
+import { scrubRandomData } from '../utilities.js';
 
 class App extends Component {
   constructor() {
@@ -17,8 +18,9 @@ class App extends Component {
 
   //DO NOT commit API KEY********
   componentDidMount() {
-    fetch('https://api.unsplash.com/photos/random/?client_id=')
+    fetch('')
       .then(response => response.json())
+      .then(x => scrubRandomData(x))
       .then(data => this.setState({randomPhoto: data}))
       .catch(error => console.log(error))
   }
