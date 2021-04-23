@@ -16,19 +16,19 @@ class App extends Component {
   }
 
   //DO NOT commit API KEY********
-  // componentDidMount() {
-  //   fetch('https://api.unsplash.com/photos/random/?client_id=')
-  //     .then(response => response.json())
-  //     .then(data => console.log(data))
-  //     .catch(error => console.log(error))
-  // }
+  componentDidMount() {
+    fetch('https://api.unsplash.com/photos/random/?client_id=')
+      .then(response => response.json())
+      .then(data => this.setState({randomPhoto: data}))
+      .catch(error => console.log(error))
+  }
 
   render() {
     return (
       <main>
         <Nav />
         <Route exact path="/"
-          render={() => <LandingPage />}
+          render={() => <LandingPage randomPhoto={this.state.randomPhoto}/>}
         />
         <Route exact path="/favorites"
           render={() => <Favorites />}
