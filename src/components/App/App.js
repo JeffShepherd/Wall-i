@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './App.css';
 import Nav from '../Nav/Nav'
+import LandingPage from '../LandingPage/LandingPage'
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,7 @@ class App extends Component {
 
       <p>test</p>
       <Nav />
+      <LandingPage />
       </>
     )
   }
