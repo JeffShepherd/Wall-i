@@ -6,7 +6,7 @@ const LandingPage = () => {
 
 
   return (
-    <main> test </main>
+    <article> test </article>
   )
 }
 
