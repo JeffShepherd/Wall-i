@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Route } from 'react-router-dom'
 import './App.css';
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
@@ -16,10 +17,14 @@ class App extends Component {
   render() {
     return (
       <main>
-
         <Nav />
-        <LandingPage />
-        <Favorites />
+        <Route exact path="/"
+          render={() => <LandingPage />}
+        />
+        <Route exact path="/favorites"
+          render={() => <Favorites />}
+        />
+        
       </main>
     )
   }
