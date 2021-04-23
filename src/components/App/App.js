@@ -10,9 +10,18 @@ class App extends Component {
     super()
 
     this.state = {
-      test: ''
+      randomPhoto: '',
+      searchResults: ''
     }
   }
+
+  //DO NOT commit API KEY********
+  // componentDidMount() {
+  //   fetch('https://api.unsplash.com/photos/random/?client_id=')
+  //     .then(response => response.json())
+  //     .then(data => console.log(data))
+  //     .catch(error => console.log(error))
+  // }
 
   render() {
     return (

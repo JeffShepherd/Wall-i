@@ -6,7 +6,11 @@ const LandingPage = () => {
 
 
   return (
-    <article> test </article>
+    <section className="landing-view">
+      <img className="random-image"/>
+
+
+    </section>
   )
 }
 

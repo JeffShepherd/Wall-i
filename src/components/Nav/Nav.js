@@ -8,16 +8,14 @@ const Nav = () => {
   return (
     <header>
 
-        <Route exact path="/"
-          render={() => 
+        <Route exact path="/" render={() => 
             <Link to={'/favorites'}>
               <p>favorites</p>
             </Link>
           }
         />
 
-        <Route exact path="/favorites"
-          render={() => 
+        <Route exact path="/favorites" render={() => 
             <Link to={'/'}>
               <p>home</p>
             </Link>
