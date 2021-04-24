@@ -10,6 +10,7 @@ const LandingPage = ({ randomPhoto, searchResults }) => {
       <Card
         url={result.url}
         altDescription={result.altDescription}
+        id={result.id}
       />
     )
   })
@@ -22,8 +23,9 @@ const LandingPage = ({ randomPhoto, searchResults }) => {
       {!searchResults.length && 
         <section className="random-image-container">
           <img className="random-image" 
-            src={`${randomPhoto.url}`} 
-            alt={`${randomPhoto.altDescription}`}
+            id={randomPhoto.id}
+            src={randomPhoto.url} 
+            alt={randomPhoto.altDescription}
           />
         </section>
       }

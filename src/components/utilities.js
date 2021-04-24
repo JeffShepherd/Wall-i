@@ -1,5 +1,5 @@
 export const scrubRandomData = (randomMovieData) => {
-  const trimmedData = {url: randomMovieData.urls.full, altDescription: randomMovieData.alt_description}
+  const trimmedData = {id: randomMovieData.id, url: randomMovieData.urls.full, altDescription: randomMovieData.alt_description}
   console.log('randomData',trimmedData)
   return trimmedData;
 }
@@ -7,7 +7,7 @@ export const scrubRandomData = (randomMovieData) => {
 export const scrubSearchData = (searchData) => {
 
   const trimmedData = searchData.results.map(result => {
-    const reducedResult = {url: result.urls.regular, altDescription: result.alt_description}
+    const reducedResult = {id: result.id, url: result.urls.regular, altDescription: result.alt_description}
     return reducedResult
   })
 
