@@ -4,7 +4,7 @@ import './App.css';
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
 import Favorites from '../Favorites/Favorites'
-import { scrubRandomData } from '../utilities.js';
+import { scrubRandomData, scrubSearchData } from '../utilities.js';
 
 class App extends Component {
   constructor() {
@@ -25,11 +25,20 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  searchForPictures = (searchValue) => {
+    fetch(``)
+      .then(response => response.json())
+      .then(x => scrubSearchData(x))
+      .then(data => this.setState({searchResults: data}))
+      .catch(error => console.log(error))
+  }
+
+
   render() {
     return (
       <main>
 
-        <Nav />
+        <Nav searchForPictures={this.searchForPictures}/>
 
         <Route exact path="/"
           render={() => 

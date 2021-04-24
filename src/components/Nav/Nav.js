@@ -6,7 +6,7 @@ import landscape from '../../icons/landscape.png'
 
 
 
-const Nav = () => {
+const Nav = ({ searchForPictures }) => {
 
   return (
     <header className="header-container">
@@ -15,7 +15,7 @@ const Nav = () => {
           <div className="header-element-container">
             <img className="icon" src={landscape} alt="logo"/>  
             <div className="search-nav-container">
-              <Form />
+              <Form  searchForPictures={searchForPictures} />
               <Link to={'/favorites'}>
                 <p>favorites</p>
               </Link>

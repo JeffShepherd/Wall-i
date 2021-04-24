@@ -8,18 +8,22 @@ class Form extends Component {
     this.state = {
       searchQuery: ''
     }
-
   }
 
   handleChange = (searchValue) => {
     this.setState({searchQuery: searchValue})
   }
 
+  submitSearch = (event) => {
+    event.preventDefault(event)
+    this.props.searchForPictures(this.state.searchQuery)
+  }
+
   render() {
     return (
       <form>
         <input type="search" onChange={event => this.handleChange(event.target.value)}/>
-        <button>Search</button>
+        <button onClick={(event) => this.submitSearch(event)}>Search</button>
       </form>
     )
   }
