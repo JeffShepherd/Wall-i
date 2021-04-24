@@ -28,10 +28,15 @@ class App extends Component {
   render() {
     return (
       <main>
+
         <Nav />
+
         <Route exact path="/"
-          render={() => <LandingPage randomPhoto={this.state.randomPhoto}/>}
+          render={() => 
+            <LandingPage randomPhoto={this.state.randomPhoto}/>
+          }
         />
+
         <Route exact path="/favorites"
           render={() => <Favorites />}
         />

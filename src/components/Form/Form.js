@@ -11,10 +11,14 @@ class Form extends Component {
 
   }
 
+  handleChange = (searchValue) => {
+    this.setState({searchQuery: searchValue})
+  }
+
   render() {
     return (
       <form>
-        <input type="search"/>
+        <input type="search" onChange={event => this.handleChange(event.target.value)}/>
         <button>Search</button>
       </form>
     )
