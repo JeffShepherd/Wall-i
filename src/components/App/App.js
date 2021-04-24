@@ -18,7 +18,7 @@ class App extends Component {
 
   //DO NOT commit API KEY********
   componentDidMount() {
-    fetch('')
+    fetch(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_KEY}`)
       .then(response => response.json())
       .then(x => scrubRandomData(x))
       .then(data => this.setState({randomPhoto: data}))
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   searchForPictures = (searchValue) => {
-    fetch(``)
+    fetch(`https://api.unsplash.com/search/photos/?client_id=${process.env.REACT_APP_KEY}&query=${searchValue}&orientation=portrait`)
       .then(response => response.json())
       .then(x => scrubSearchData(x))
       .then(data => this.setState({searchResults: data}))
