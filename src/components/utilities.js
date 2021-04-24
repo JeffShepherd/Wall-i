@@ -1,6 +1,6 @@
 export const scrubRandomData = (randomMovieData) => {
   const trimmedData = {url: randomMovieData.urls.full, altDescription: randomMovieData.alt_description}
-  console.log('randomdData',trimmedData)
+  console.log('randomData',trimmedData)
   return trimmedData;
 }
 

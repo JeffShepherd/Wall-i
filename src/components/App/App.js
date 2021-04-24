@@ -12,7 +12,7 @@ class App extends Component {
 
     this.state = {
       randomPhoto: '',
-      searchResults: ''
+      searchResults: []
     }
   }
 
@@ -42,12 +42,14 @@ class App extends Component {
 
         <Route exact path="/"
           render={() => 
-            <LandingPage randomPhoto={this.state.randomPhoto}/>
+            <LandingPage searchResults={this.state.searchResults} randomPhoto={this.state.randomPhoto}/>
           }
         />
 
         <Route exact path="/favorites"
-          render={() => <Favorites />}
+          render={() => 
+            <Favorites />
+          }
         />
         
       </main>
