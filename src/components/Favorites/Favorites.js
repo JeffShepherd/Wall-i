@@ -7,7 +7,7 @@ const Favorites = () => {
 
 
   return (
-    <section>fish scales</section>
+    <section className="favorites-view">fish scales</section>
   )
 }
 

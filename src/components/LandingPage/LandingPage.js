@@ -2,12 +2,19 @@ import React from 'react'
 import './LandingPage.css'
 
 
-const LandingPage = () => {
-
+const LandingPage = ({ randomPhoto }) => {
+console.log()
 
   return (
-    <article> test </article>
+    <section className="landing-view" >
+      <img className="random-image" 
+      src={`${randomPhoto.url}`} 
+      alt={`${randomPhoto.altDescription}`}
+      />
+      <div className="random-overlay"></div>
+    </section>
   )
 }
 
 export default LandingPage
+
