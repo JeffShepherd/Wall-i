@@ -9,26 +9,30 @@ import landscape from '../../icons/landscape.png'
 const Nav = () => {
 
   return (
-    <header>
+    <header className="header-container">
 
       <Route exact path="/" render={() => 
-          <div>
-            <img className="icon" src={landscape}/>
-            <Form />
-            <Link to={'/favorites'}>
-              <p>favorites</p>
-            </Link>
+          <div className="header-element-container">
+            <img className="icon" src={landscape} alt="logo"/>  
+            <div className="search-nav-container">
+              <Form />
+              <Link to={'/favorites'}>
+                <p>favorites</p>
+              </Link>
+            </div>
           </div>
         }
       />
 
       <Route exact path="/favorites" render={() =>
-          <div>
-            <img className="icon" src={landscape}/>
-            <Form />
-            <Link to={'/'}>
-              <p>home</p>
-            </Link>
+          <div className="header-element-container">
+            <img className="icon" src={landscape}  alt="logo"/>
+            <div className="search-nav-container">
+              <Form />
+              <Link to={'/'}>
+                <p>home</p>
+              </Link>
+            </div>
           </div>
         }
       />
