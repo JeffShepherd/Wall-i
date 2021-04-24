@@ -11,7 +11,7 @@ console.log()
       src={`${randomPhoto.url}`} 
       alt={`${randomPhoto.altDescription}`}
       />
-      
+      <div className="random-overlay"></div>
     </section>
   )
 }
