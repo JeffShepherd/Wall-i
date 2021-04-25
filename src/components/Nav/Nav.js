@@ -14,7 +14,7 @@ const Nav = ({ searchForPictures, error }) => {
       <Route exact path="/" render={() => 
           <div className="header-element-container">
             <img className="icon" src={landscape} alt="logo"/>
-            {error && <p>⚠️ {error}</p>}
+            {error && <p className="error-message">⚠️ {error}</p>}
             <div className="search-nav-container">
               <Form  searchForPictures={searchForPictures} />
               <Link to={'/favorites'}>
@@ -28,7 +28,7 @@ const Nav = ({ searchForPictures, error }) => {
       <Route exact path="/favorites" render={() =>
           <div className="header-element-container">
             <img className="icon" src={landscape}  alt="logo"/>
-            {error && <p>⚠️ {error}</p>}
+            {error && <p className="error-message">⚠️ {error}</p>}
             <div className="search-nav-container">
               <Form searchForPictures={searchForPictures} />
               <Link to={'/'}>
