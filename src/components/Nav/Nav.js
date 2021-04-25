@@ -28,7 +28,7 @@ const Nav = ({ searchForPictures }) => {
           <div className="header-element-container">
             <img className="icon" src={landscape}  alt="logo"/>
             <div className="search-nav-container">
-              <Form />
+              <Form searchForPictures={searchForPictures} />
               <Link to={'/'}>
                 <p>home</p>
               </Link>

@@ -13,7 +13,6 @@
 }
 
 /* test only */
-p {
-  color: white;
-  height: 10%;
+.favorite-button {
+  background-color: white;
 }
