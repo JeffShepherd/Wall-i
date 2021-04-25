@@ -30,4 +30,5 @@ margin: 0 5%;
 
 .error-message {
   color: red;
+  margin: auto 0;
 }
