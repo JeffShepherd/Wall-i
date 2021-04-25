@@ -41,6 +41,7 @@ class App extends Component {
     } else {
       this.addFavorite(id)
     }
+    console.log('favorites', this.state.favorites)//test only
   }
 
   checkIfFavorite = (id) => {
@@ -68,13 +69,13 @@ class App extends Component {
 
         <Route exact path="/"
           render={() => 
-            <LandingPage searchResults={this.state.searchResults} randomPhoto={this.state.randomPhoto}/>
+            <LandingPage searchResults={this.state.searchResults} updateFavorites={this.updateFavorites} randomPhoto={this.state.randomPhoto}/>
           }
         />
 
         <Route exact path="/favorites"
           render={() => 
-            <Favorites />
+            <Favorites updateFavorites={this.updateFavorites}/>
           }
         />
         

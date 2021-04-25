@@ -3,11 +3,13 @@ import './LandingPage.css'
 import Card from '../Card/Card'
 
 
-const LandingPage = ({ randomPhoto, searchResults }) => {
+const LandingPage = ({ randomPhoto, searchResults, updateFavorites }) => {
 
   const searchCards = searchResults.map(result => {
     return (
       <Card
+        key={result.id}
+        updateFavorites={updateFavorites}
         url={result.url}
         altDescription={result.altDescription}
         id={result.id}
