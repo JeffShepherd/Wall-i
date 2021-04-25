@@ -6,7 +6,7 @@ import landscape from '../../icons/landscape.png'
 
 
 
-const Nav = ({ searchForPictures, error }) => {
+const Nav = ({ searchForPictures, error, clearSearchResults }) => {
 
   return (
     <header className="header-container">
@@ -32,7 +32,7 @@ const Nav = ({ searchForPictures, error }) => {
             <div className="search-nav-container">
               <Form searchForPictures={searchForPictures} />
               <Link to={'/'}>
-                <p>home</p>
+                <p onClick={() => clearSearchResults()}>home</p>
               </Link>
             </div>
           </div>

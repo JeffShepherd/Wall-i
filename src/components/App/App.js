@@ -74,11 +74,15 @@ class App extends Component {
     this.setState({favorites: newFavorites})
   }
 
+  clearSearchResults = () => {
+    this.setState({message: '', searchResults: []})
+  }
+
   render() {
     return (
       <main>
 
-        <Nav error={this.state.error} searchForPictures={this.searchForPictures}/>
+        <Nav clearSearchResults={this.clearSearchResults} error={this.state.error} searchForPictures={this.searchForPictures}/>
 
         <Route exact path="/"
           render={() => 
