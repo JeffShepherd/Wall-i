@@ -3,7 +3,7 @@ import './LandingPage.css'
 import Card from '../Card/Card'
 
 
-const LandingPage = ({ randomPhoto, searchResults, updateFavorites }) => {
+const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message }) => {
 
   const searchCards = searchResults.map(result => {
     return (
@@ -22,7 +22,9 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites }) => {
     
     <section className="landing-view" >
 
-      {!searchResults.length && 
+      {message && <p className="search-message">{message}</p>}
+
+      {!searchResults.length && !message && 
         <section className="random-image-container">
           <img className="random-image" 
             id={randomPhoto.id}

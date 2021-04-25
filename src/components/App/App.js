@@ -15,7 +15,8 @@ class App extends Component {
       randomPhoto: '',
       searchResults: [],
       favorites: [],
-      error: ''
+      error: '',
+      message: ''
     }
   }
 
@@ -27,7 +28,13 @@ class App extends Component {
 
   searchForPictures = (searchValue) => {
     searchForPhotos(searchValue)
-      .then(data => this.setState({searchResults: data}))
+      .then(data => {
+        if(data.length) {
+          this.setState({searchResults: data, message: ''})
+        } else {
+          this.setState({searchResults: data, message: 'No results for this search. Please try a different topic.'})
+        }
+      })
       .catch(error => this.setState({error: 'An error has occured. Please try again later.'}))
   }
 
@@ -67,15 +74,19 @@ class App extends Component {
     this.setState({favorites: newFavorites})
   }
 
+  clearSearchResults = () => {
+    this.setState({message: '', searchResults: []})
+  }
+
   render() {
     return (
       <main>
 
-        <Nav error={this.state.error} searchForPictures={this.searchForPictures}/>
+        <Nav clearSearchResults={this.clearSearchResults} error={this.state.error} searchForPictures={this.searchForPictures}/>
 
         <Route exact path="/"
           render={() => 
-            <LandingPage searchResults={this.state.searchResults} updateFavorites={this.updateFavorites} randomPhoto={this.state.randomPhoto}/>
+            <LandingPage message={this.state.message} searchResults={this.state.searchResults} updateFavorites={this.updateFavorites} randomPhoto={this.state.randomPhoto}/>
           }
         />
 
