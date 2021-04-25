@@ -12,12 +12,13 @@ class App extends Component {
 
     this.state = {
       randomPhoto: '',
-      searchResults: []
+      searchResults: [],
+      favorites: []
     }
   }
 
   componentDidMount() {
-    fetch(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_KEY}`)
+    fetch(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_KEY}&orientation=squarish`)
       .then(response => response.json())
       .then(x => scrubRandomData(x))
       .then(data => this.setState({randomPhoto: data}))
@@ -32,6 +33,32 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  updateFavorites = (id) => {
+    if(!this.state.favorites.length) {
+      this.addFavorite(id)
+    } else if(this.checkIfFavorite(id)) {
+      this.removeFavorite(id)
+    } else {
+      this.addFavorite(id)
+    }
+  }
+
+  checkIfFavorite = (id) => {
+    if(this.state.favorites.filter(fav => id === fav.id).length) {
+      return true
+    }
+    return false
+  }
+
+  addFavorite = (id) => {
+    const newFavorite = this.state.searchResults.find(result => id === result.id)
+    this.setState({favorites: [newFavorite, ...this.state.favorites]})
+  }
+
+  removeFavorite = (id) => {
+    const newFavorites = this.state.searchResults.filter(result => id !== result.id)
+    this.setState({favorites: newFavorites})
+  }
 
   render() {
     return (
