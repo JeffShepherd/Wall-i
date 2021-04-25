@@ -4,7 +4,9 @@ import './App.css';
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
 import Favorites from '../Favorites/Favorites'
-import { scrubRandomData, scrubSearchData } from '../utilities.js';
+import { scrubRandomData, scrubSearchData } from '../../utilities.js';
+import { getRandomPhoto } from '../../api.js';
+
 
 class App extends Component {
   constructor() {
@@ -18,9 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_KEY}&orientation=squarish`)
-      .then(response => response.json())
-      .then(x => scrubRandomData(x))
+      getRandomPhoto()
       .then(data => this.setState({randomPhoto: data}))
       .catch(error => console.log(error))
   }
