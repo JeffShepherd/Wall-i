@@ -22,11 +22,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message }) =
     
     <section className="landing-view" >
 
-      {message && 
-        <section>
-          <p>{message}</p>
-        </section>
-      }
+      {message && <p className="search-message">{message}</p>}
 
       {!searchResults.length && !message && 
         <section className="random-image-container">

@@ -5,3 +5,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.favorites-message {
+  margin: auto 0;
+}

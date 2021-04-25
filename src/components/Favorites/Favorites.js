@@ -19,7 +19,7 @@ const Favorites = ({ favorites, updateFavorites }) => {
 
   return (
     <section className="favorites-view">
-      {!favorites.length && <p>No favorites added yet!</p>}
+      {!favorites.length && <p className="favorites-message">No favorites added yet!</p>}
       {favoriteCards}
     </section>
   )
