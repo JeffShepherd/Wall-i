@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       randomPhoto: '',
       searchResults: [],
-      favorites: []
+      favorites: [],
+      error: ''
     }
   }
 
@@ -70,7 +71,7 @@ class App extends Component {
     return (
       <main>
 
-        <Nav searchForPictures={this.searchForPictures}/>
+        <Nav error={this.state.error} searchForPictures={this.searchForPictures}/>
 
         <Route exact path="/"
           render={() => 

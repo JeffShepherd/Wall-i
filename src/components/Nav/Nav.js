@@ -6,14 +6,15 @@ import landscape from '../../icons/landscape.png'
 
 
 
-const Nav = ({ searchForPictures }) => {
+const Nav = ({ searchForPictures, error }) => {
 
   return (
     <header className="header-container">
 
       <Route exact path="/" render={() => 
           <div className="header-element-container">
-            <img className="icon" src={landscape} alt="logo"/>  
+            <img className="icon" src={landscape} alt="logo"/>
+            {error && <p>⚠️ {error}</p>}
             <div className="search-nav-container">
               <Form  searchForPictures={searchForPictures} />
               <Link to={'/favorites'}>
@@ -27,6 +28,7 @@ const Nav = ({ searchForPictures }) => {
       <Route exact path="/favorites" render={() =>
           <div className="header-element-container">
             <img className="icon" src={landscape}  alt="logo"/>
+            {error && <p>⚠️ {error}</p>}
             <div className="search-nav-container">
               <Form searchForPictures={searchForPictures} />
               <Link to={'/'}>
