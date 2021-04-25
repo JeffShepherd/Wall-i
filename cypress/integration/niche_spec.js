@@ -1,7 +1,6 @@
 describe('Home page', () => {
 
   beforeEach(() => {
-
     cy.fixture('random.json')
     .then(randomData => {
       cy.intercept(
@@ -16,9 +15,16 @@ describe('Home page', () => {
     cy.visit('http://localhost:3000/')
   })
 
+  it('Show a hero photo on load', () => {
+    cy.get('img[id=uYA3q_83I5U]').should('be.visible')
+  })
 
-    it('Shows a random photo on load', () => {
+  it('Shows have a favorites link', () => {
+    cy.get('p').contains('favorites')
+  })
 
-    })
+  it('Should reflect a form with a search button', () => {
+    cy.get('form').children().should('have.length', 2)
+  })
 
 })
