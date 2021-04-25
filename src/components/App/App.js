@@ -33,15 +33,20 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  updateFavorites = (id) => {
+  updateFavorites = (event) => {
+    event.preventDefault(event)
+    const id = event.target.id
+
     if(!this.state.favorites.length) {
+      console.log('a')
       this.addFavorite(id)
     } else if(this.checkIfFavorite(id)) {
+      console.log('b')
       this.removeFavorite(id)
     } else {
+      console.log('c')
       this.addFavorite(id)
     }
-    console.log('favorites', this.state.favorites)//test only
   }
 
   checkIfFavorite = (id) => {
@@ -53,11 +58,14 @@ class App extends Component {
 
   addFavorite = (id) => {
     const newFavorite = this.state.searchResults.find(result => id === result.id)
+    console.log('new fav', newFavorite)
+    console.log('updated favs', [newFavorite, ...this.state.favorites])//test only
     this.setState({favorites: [newFavorite, ...this.state.favorites]})
   }
 
   removeFavorite = (id) => {
-    const newFavorites = this.state.searchResults.filter(result => id !== result.id)
+    const newFavorites = this.state.favorites.filter(favorite => id !== favorite.id)
+    console.log('minus fav', newFavorites)
     this.setState({favorites: newFavorites})
   }
 
@@ -75,7 +83,7 @@ class App extends Component {
 
         <Route exact path="/favorites"
           render={() => 
-            <Favorites updateFavorites={this.updateFavorites}/>
+            <Favorites favorites={this.state.favorites} updateFavorites={this.updateFavorites}/>
           }
         />
         

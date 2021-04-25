@@ -7,7 +7,7 @@ const Card = ({ url, altDescription, id, updateFavorites }) => {
   return (
     <article className="card">
       <img className="card-image" src={url} alt={altDescription}/>
-      <p id={id} onClick={(event) => updateFavorites(event.target.id)}>add to favorites</p>
+      <button className="favorite-button" id={id} onClick={(event) => updateFavorites(event)}>add to favorites</button>
     </article>
   )
 

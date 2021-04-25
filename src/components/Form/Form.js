@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Form.css'
 
 class Form extends Component {
@@ -14,16 +15,15 @@ class Form extends Component {
     this.setState({searchQuery: searchValue})
   }
 
-  submitSearch = (event) => {
-    event.preventDefault(event)
-    this.props.searchForPictures(this.state.searchQuery)
-  }
 
   render() {
     return (
       <form>
+        
         <input type="search" onChange={event => this.handleChange(event.target.value)}/>
-        <button onClick={(event) => this.submitSearch(event)}>Search</button>
+        <Link to={'/'}>
+          <input type="submit" onClick={() => this.props.searchForPictures(this.state.searchQuery)}/>
+        </Link>
       </form>
     )
   }
