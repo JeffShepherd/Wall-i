@@ -6,3 +6,9 @@ export const getRandomPhoto = () => {
           .then(response => response.json())
           .then(x => scrubRandomData(x))
 }
+
+export const searchForPhotos = (searchValue) => {
+  return fetch(`https://api.unsplash.com/search/photos/?client_id=${process.env.REACT_APP_KEY}&query=${searchValue}&orientation=portrait`)
+          .then(response => response.json())
+          .then(x => scrubSearchData(x))
+ }
