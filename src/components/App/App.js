@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import { Route } from 'react-router-dom'
-import './App.css';
+import './App.css'
 import Nav from '../Nav/Nav'
 import LandingPage from '../LandingPage/LandingPage'
 import Favorites from '../Favorites/Favorites'
-import { getRandomPhoto, searchForPhotos } from '../../api.js';
+import { getRandomPhoto, searchForPhotos } from '../../api.js'
 
 
 class App extends Component {
@@ -14,20 +14,21 @@ class App extends Component {
     this.state = {
       randomPhoto: '',
       searchResults: [],
-      favorites: []
+      favorites: [],
+      error: ''
     }
   }
 
   componentDidMount() {
     getRandomPhoto()
       .then(data => this.setState({randomPhoto: data}))
-      .catch(error => console.log(error))
+      .catch(error => this.setState({error: 'An error has occured. Please try again later.'}))
   }
 
   searchForPictures = (searchValue) => {
     searchForPhotos(searchValue)
       .then(data => this.setState({searchResults: data}))
-      .catch(error => console.log(error))
+      .catch(error => this.setState({error: 'An error has occured. Please try again later.'}))
   }
 
   updateFavorites = (event) => {
@@ -70,7 +71,7 @@ class App extends Component {
     return (
       <main>
 
-        <Nav searchForPictures={this.searchForPictures}/>
+        <Nav error={this.state.error} searchForPictures={this.searchForPictures}/>
 
         <Route exact path="/"
           render={() => 
