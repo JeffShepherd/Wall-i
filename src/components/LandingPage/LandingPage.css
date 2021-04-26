@@ -41,12 +41,38 @@
 
 
 
-h2 {/* test only */
-  color: white;
+.random-favorite-button {
+  font-size: 1.4em;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 5px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1%;
+  right: 1%;
+  z-index: 999;
 }
+
+.random-favorite-button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.random-favorite-button-red {
+  color: red;
+}
+
+.random-favorite-button-white {
+  color: white;
+}
+
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 768px) {
   .overlay-container {

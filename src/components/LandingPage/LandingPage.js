@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 
 
-const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, favorites }) => {
+const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, favorites, updateFavoritesForRandom }) => {
 
   const searchCards = searchResults.map(result => {
     return (
@@ -19,6 +19,19 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
     )
   })
 
+    const returnClass = () => {
+      if(randomPhoto === {} || !favorites.length){
+        return 'random-favorite-button random-favorite-button-white'
+      }
+
+      const matches = favorites.filter(fav => randomPhoto.id === fav.id)
+  
+      if(matches.length) {
+        return 'random-favorite-button random-favorite-button-red'
+      } else {
+        return 'random-favorite-button random-favorite-button-white'
+      }
+    }
 
   return (
     
@@ -34,7 +47,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
               src={randomPhoto.url} 
               alt={randomPhoto.altDescription}
             />
-            <h2>test</h2>
+            <button className={returnClass()} id={randomPhoto.id} onClick={(event) => updateFavoritesForRandom(event)}>❤</button>
           </div>
         </section>
       }
@@ -57,6 +70,7 @@ LandingPage.propTypes = {
   updateFavorites: PropTypes.func,
   randomPhoto: PropTypes.object,
   searchResults: PropTypes.array,
-  favorites: PropTypes.array
+  favorites: PropTypes.array,
+  updateFavoritesForRandom: PropTypes.func
 };
 
