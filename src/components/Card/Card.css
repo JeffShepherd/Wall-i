@@ -1,6 +1,7 @@
 .card {
-  width: 25%;
-  margin: 2% 0.1%;
+  width: 95%;
+  height: 90%;
+  margin: 3% 0.1%;
   position: relative;
 }
 
@@ -9,10 +10,6 @@
   height: 100%;
   display: block;
   border-radius: 3px;
-}
-
-.card:hover {
-  border: 0.5px solid grey;
 }
 
 .favorite-button {
@@ -40,3 +37,20 @@
   color: white;
 }
 
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 45%;
+    height: 70%;
+    margin: 2% 0.1%;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .card {
+    width: 30%;
+    height: 70%;
+    margin: 2% 0.1%;
+    position: relative;
+  }
+}
