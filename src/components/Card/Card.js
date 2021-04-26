@@ -5,8 +5,6 @@ import './Card.css'
 const Card = ({ url, altDescription, id, updateFavorites, favorites, download, name }) => {
 
   const returnClass = () => {
-    console.log('download', download)
-    console.log('name', name)
     const matches = favorites.filter(fav => id === fav.id)
 
     if(matches.length) {
@@ -16,7 +14,6 @@ const Card = ({ url, altDescription, id, updateFavorites, favorites, download, n
     }
   }
 
-    
   return (
     <article className="card">
       <img className="card-image" src={url} alt={altDescription}/>
@@ -29,7 +26,6 @@ const Card = ({ url, altDescription, id, updateFavorites, favorites, download, n
       <a title="download" href={download} className="download-button-card">⬇</a>
     </article>
   )
-
 }
 
 export default Card

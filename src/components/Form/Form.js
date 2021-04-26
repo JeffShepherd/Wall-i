@@ -16,7 +16,6 @@ class Form extends Component {
     this.setState({searchQuery: searchValue})
   }
 
-
   render() {
     return (
       <form>

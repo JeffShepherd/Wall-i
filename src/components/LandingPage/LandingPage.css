@@ -8,7 +8,6 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  /* align-items: flex-start; */
 }
 
 .overlay-container {
@@ -16,7 +15,6 @@
   height: 98%;
   width: 98%;
   margin: auto;
-
 }
 
 .random-image {

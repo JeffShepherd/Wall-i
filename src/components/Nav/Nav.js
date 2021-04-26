@@ -4,8 +4,6 @@ import Form from '../Form/Form'
 import PropTypes from 'prop-types'
 import './Nav.css';
 
-
-
 const Nav = ({ searchForPictures, error, clearSearchResults }) => {
 
   return (
@@ -42,8 +40,6 @@ const Nav = ({ searchForPictures, error, clearSearchResults }) => {
     </header>
   )
 }
-
-
 
 export default Nav
 
