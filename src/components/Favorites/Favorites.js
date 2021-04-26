@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 import './Favorites.css'
 
-
 const Favorites = ({ favorites, updateFavorites }) => {
 
   const favoriteCards = favorites.map(favorite => {
