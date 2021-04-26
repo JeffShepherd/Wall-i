@@ -21,10 +21,15 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.loadRandomPhoto()
+  }
+
+  loadRandomPhoto = () => {
     getRandomPhoto()
       .then(data => this.setState({randomPhoto: data}))
       .catch(error => this.setState({error: 'An error has occured. Please try again later.'}))
   }
+
 
   searchForPictures = (searchValue) => {
     searchForPhotos(searchValue)
@@ -78,6 +83,17 @@ class App extends Component {
     this.setState({message: '', searchResults: []})
   }
 
+  updateFavoritesForRandom = (event) => {
+    event.preventDefault(event)
+    const id = event.target.id
+
+    if(this.checkIfFavorite(id)){
+      this.removeFavorite(id)
+    } else {
+      this.setState({favorites: [this.state.randomPhoto, ...this.state.favorites]})
+    }
+  }
+
   render() {
     return (
       <main>
@@ -94,6 +110,8 @@ class App extends Component {
               searchResults={this.state.searchResults} 
               updateFavorites={this.updateFavorites} 
               randomPhoto={this.state.randomPhoto}
+              updateFavoritesForRandom={this.updateFavoritesForRandom}
+              loadRandomPhoto={this.loadRandomPhoto}
             />
           }
         />

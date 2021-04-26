@@ -8,13 +8,21 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 }
 
-.random-image {
+.overlay-container {
+  position: relative;
   height: 98%;
   width: 98%;
   margin: auto;
+
+}
+
+.random-image {
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 .card-container {
@@ -31,15 +39,59 @@
   color: white;
 }
 
+.get-random-button {
+  font-size: 1.2em;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 1%;
+  left: 1.5%;
+  z-index: 999;
+  color: white;
+}
+
+.get-random-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.random-favorite-button {
+  font-size: 1.4em;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 999;
+}
+
+.random-favorite-button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.random-favorite-button-red {
+  color: red;
+}
+
+.random-favorite-button-white {
+  color: white;
+}
+
+
 @media only screen and (min-width: 768px) {
-  .random-image {
+  .overlay-container {
     height: 95%;
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 1050px) {
-  .random-image {
+  .overlay-container {
     height: 98%;
     width: 70%;
   }
