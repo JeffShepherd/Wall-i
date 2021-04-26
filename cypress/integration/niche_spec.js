@@ -38,6 +38,78 @@ describe('Home page', () => {
 })
 
 
+describe('Searching and favoriting', () => {
+  beforeEach(() => {
+    cy.fixture('random.json')
+    .then(randomData => {
+      cy.intercept(
+        'GET',
+        `https://api.unsplash.com/photos/random/?client_id=${Cypress.env('KEY')}&orientation=squarish`,
+        { 
+          statusCode: 200,
+          body: randomData
+        }
+      )
+    })
+    cy.fixture('favorites.json')
+    .then(favoritesData => {
+      cy.intercept(
+        'GET',
+        `https://api.unsplash.com/search/photos/?client_id=${Cypress.env('KEY')}&query=fish&orientation=portrait`,
+        { 
+          statusCode: 200,
+          body: favoritesData
+        }
+      )
+    })
+    cy.visit('http://localhost:3000/')
+    cy.get('.search-input')
+      .type('fish{enter}')
+  })
+
+  it('Should display a card for each result in the results property', () => {
+    cy.get('.card-container').children()
+      .should('have.length', 10)
+  })
+
+  it('Should be able to favorite a photo and view it in the favorites section', () => {
+    cy.get('button[id=giBrgSp9KW4]')
+      .click()
+    cy.get('.favorite-link').click()
+    cy.get('.card')
+      .find('img')
+      .should('have.attr', 'alt')
+      .should('include', 'orange and white fish in fish tank')
+  })
+
+  it('Should be able to favorite more than one photo', () => {
+    cy.get('button[id=giBrgSp9KW4]')
+      .click()
+    cy.get('button[id=1AjxqINfBYs]')
+      .click()
+    cy.get('.favorite-link').click()
+    cy.get('.card')
+      .find('img')
+      .should('have.attr', 'alt')
+      .should('include', 'underwater photography of white jellyfish')
+  })
+
+  it('Should be able to unfavorite a photo', () => {
+    cy.get('button[id=giBrgSp9KW4]')
+      .click()
+    cy.get('.favorite-link').click()
+    cy.get('button[id=giBrgSp9KW4]')
+      .click()
+    cy.get('.card')
+      .should('not.exist')
+    cy.get('.favorites-message')
+      .contains('No favorites added yet!')
+  })
+
+})
+
+
+
 describe('Sad paths', () => {
 
   it('Should show an error message when the random photo API request fails', () => {
@@ -54,7 +126,7 @@ describe('Sad paths', () => {
       .contains('An error has occured. Please try again later.')
   })
 
-  it('Should show an error message when the random photo API request fails', () => {
+  beforeEach(() => {
     cy.fixture('random.json')
     .then(randomData => {
       cy.intercept(
@@ -66,6 +138,9 @@ describe('Sad paths', () => {
         }
       )
     })
+  })
+
+  it('Should show an error message when the random photo API request fails', () => {
 
     cy.intercept({
       method: 'GET',
@@ -82,6 +157,29 @@ describe('Sad paths', () => {
 
     cy.get('.error-message')
       .contains('An error has occured. Please try again later.')
+  })
+
+  it('Should inform the user when nothing matches their search criteria', () => {
+
+    cy.intercept({
+      method: 'GET',
+      url: `https://api.unsplash.com/search/photos/?client_id=${Cypress.env('KEY')}&query=wfwfe2332&orientation=portrait`
+    },
+      {
+        statusCode: 200,
+        body:{
+          "total": 0,
+          "total_pages": 0,
+          "results": []
+      }
+      });
+
+    cy.visit('http://localhost:3000/')
+    cy.get('.search-input')
+    .type('wfwfe2332{enter}')
+
+    cy.get('.search-message')
+      .contains('No results for this search. Please try a different topic.')
   })
 
 })
