@@ -82,6 +82,34 @@
   color: white;
 }
 
+.photographer {
+  font-size: 0.5em;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  position: absolute;
+  bottom: 0.5%;
+  left: 0.5%;
+  z-index: 999;
+  color: white;
+}
+
+.download-button {
+  font-size: 1.6em;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  z-index: 999;
+  color: white;
+  text-decoration: none;
+}
+
+.download-button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
 
 @media only screen and (min-width: 768px) {
   .overlay-container {
