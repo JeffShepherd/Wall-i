@@ -50,6 +50,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
             />
             <button className={returnClass()} id={randomPhoto.id} onClick={(event) => updateFavoritesForRandom(event)}>❤</button>
             <p className="photographer">photographer: {randomPhoto.name}</p>
+            <a href="https://www.w3schools.com" className="download-button">⬇</a>
           </div>
         </section>
       }

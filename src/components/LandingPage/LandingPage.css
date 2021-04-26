@@ -92,6 +92,24 @@
   color: white;
 }
 
+.download-button {
+  font-size: 1.6em;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  z-index: 999;
+  color: white;
+  text-decoration: none;
+}
+
+.download-button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
 
 @media only screen and (min-width: 768px) {
   .overlay-container {
