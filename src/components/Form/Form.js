@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './Form.css'
 
 class Form extends Component {
@@ -36,3 +37,7 @@ class Form extends Component {
 }
 
 export default Form
+
+Form.propTypes = {
+  searchForPictures: PropTypes.func
+};

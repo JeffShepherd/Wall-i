@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import Form from '../Form/Form'
+import PropTypes from 'prop-types'
 import './Nav.css';
 
 
@@ -45,3 +46,9 @@ const Nav = ({ searchForPictures, error, clearSearchResults }) => {
 
 
 export default Nav
+
+Nav.propTypes = {
+  error: PropTypes.string,
+  searchForPictures: PropTypes.func,
+  clearSearchResults: PropTypes.func
+};
