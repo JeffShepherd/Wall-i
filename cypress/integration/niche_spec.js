@@ -22,8 +22,8 @@ describe('Home page', () => {
       .should('include', 'https://images.unsplash.com/photo-1616952801670-d33ab59d45bc?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMjQ5MjF8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTkzODc3NjE&ixlib=rb-1.2.1&q=85')
   })
 
-  it('Should have a favorites link', () => {
-    cy.get('p').contains('favorites')
+  it('Should have a favorites button', () => {
+    cy.get('.random-favorite-button').contains('❤')
   })
 
   it('Should reflect a form with a search button', () => {
@@ -103,7 +103,7 @@ describe('Searching and favoriting', () => {
     cy.get('.card')
       .should('not.exist')
     cy.get('.favorites-message')
-      .contains('No favorites added yet!')
+      .contains('no favorites added yet')
   })
 
 })
