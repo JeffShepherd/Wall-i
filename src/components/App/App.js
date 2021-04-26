@@ -6,7 +6,6 @@ import LandingPage from '../LandingPage/LandingPage'
 import Favorites from '../Favorites/Favorites'
 import { getRandomPhoto, searchForPhotos } from '../../api.js'
 
-
 class App extends Component {
   constructor() {
     super()
@@ -30,7 +29,6 @@ class App extends Component {
       .catch(error => this.setState({error: 'An error has occured. Please try again later.'}))
   }
 
-
   searchForPictures = (searchValue) => {
     searchForPhotos(searchValue)
       .then(data => {
@@ -48,13 +46,10 @@ class App extends Component {
     const id = event.target.id
 
     if(!this.state.favorites.length) {
-      console.log('a')
       this.addFavorite(id)
     } else if(this.checkIfFavorite(id)) {
-      console.log('b')
       this.removeFavorite(id)
     } else {
-      console.log('c')
       this.addFavorite(id)
     }
   }
@@ -68,14 +63,11 @@ class App extends Component {
 
   addFavorite = (id) => {
     const newFavorite = this.state.searchResults.find(result => id === result.id)
-    console.log('new fav', newFavorite)
-    console.log('updated favs', [newFavorite, ...this.state.favorites])//test only
     this.setState({favorites: [newFavorite, ...this.state.favorites]})
   }
 
   removeFavorite = (id) => {
     const newFavorites = this.state.favorites.filter(favorite => id !== favorite.id)
-    console.log('minus fav', newFavorites)
     this.setState({favorites: newFavorites})
   }
 
@@ -129,6 +121,5 @@ class App extends Component {
   }
 
 }
-
 
 export default App;
