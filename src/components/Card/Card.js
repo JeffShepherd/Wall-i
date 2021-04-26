@@ -25,8 +25,8 @@ const Card = ({ url, altDescription, id, updateFavorites, favorites, download, n
         id={id} 
         onClick={(event) => updateFavorites(event)}
       >❤</button>
-      <p className="photographer">photographer: {name}</p>
-      <a title="download" href={download} className="download-button">⬇</a>
+      <p className="photographer-card">photographer: {name}</p>
+      <a title="download" href={download} className="download-button-card">⬇</a>
     </article>
   )
 
