@@ -15,6 +15,8 @@ const Favorites = ({ favorites, updateFavorites }) => {
         altDescription={favorite.altDescription}
         id={favorite.id}
         favorites={favorites}
+        download={favorite.download}
+        name={favorite.name}
       />
     )
   })

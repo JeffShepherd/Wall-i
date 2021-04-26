@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 
 
-const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, favorites, updateFavoritesForRandom, loadRandomPhoto }) => {
+const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, 
+  favorites, updateFavoritesForRandom, loadRandomPhoto }) => {
 
   const searchCards = searchResults.map(result => {
     return (
@@ -15,6 +16,8 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
         altDescription={result.altDescription}
         id={result.id}
         favorites={favorites}
+        download={result.download}
+        name={result.name}
       />
     )
   })
@@ -51,7 +54,8 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
             <button className={returnClass()} 
               id={randomPhoto.id} 
               title="favorite/unfavorite"
-              onClick={(event) => updateFavoritesForRandom(event)}>❤</button>
+              onClick={(event) => updateFavoritesForRandom(event)}
+            >❤</button>
             <p className="photographer">photographer: {randomPhoto.name}</p>
             <a title="download" href={randomPhoto.download} className="download-button">⬇</a>
           </div>
