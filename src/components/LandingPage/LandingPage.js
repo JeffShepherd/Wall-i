@@ -42,6 +42,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
       {!searchResults.length && !message && 
         <section className="random-image-container">
           <div className="overlay-container">
+            <button className="get-random-button">get another random image</button>
             <img className="random-image" 
               id={randomPhoto.id}
               src={randomPhoto.url} 
