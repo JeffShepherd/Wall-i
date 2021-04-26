@@ -18,7 +18,7 @@ const Nav = ({ searchForPictures, error, clearSearchResults }) => {
             <div className="search-nav-container">
               <Form  searchForPictures={searchForPictures} />
               <Link to={'/favorites'}>
-                <p className="favorite-link">favorites</p>
+                <p className="favorite-link">Favorites</p>
               </Link>
             </div>
           </div>
@@ -32,7 +32,7 @@ const Nav = ({ searchForPictures, error, clearSearchResults }) => {
             <div className="search-nav-container">
               <Form searchForPictures={searchForPictures} />
               <Link to={'/'}>
-                <p onClick={() => clearSearchResults()}>home</p>
+                <p className="home-link" onClick={() => clearSearchResults()}>Home</p>
               </Link>
             </div>
           </div>

@@ -19,10 +19,16 @@ class Form extends Component {
   render() {
     return (
       <form>
-        
-        <input className="search-input" type="search" onChange={event => this.handleChange(event.target.value)}/>
+        <input className="search-input" 
+          type="search" 
+          placeholder="Search for photos"
+          onChange={event => this.handleChange(event.target.value)}
+        />
         <Link to={'/'}>
-          <input type="submit" onClick={() => this.props.searchForPictures(this.state.searchQuery)}/>
+          <input type="submit" 
+            onClick={() => this.props.searchForPictures(this.state.searchQuery)}
+            className="search-submit"
+          />
         </Link>
       </form>
     )

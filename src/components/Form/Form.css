@@ -1,0 +1,11 @@
+
+.search-submit {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+}
+
+.search-submit:hover {
+  cursor: pointer;
+  transform: scale(1.2)
+}
