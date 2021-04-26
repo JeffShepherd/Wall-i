@@ -49,6 +49,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
               alt={randomPhoto.altDescription}
             />
             <button className={returnClass()} id={randomPhoto.id} onClick={(event) => updateFavoritesForRandom(event)}>❤</button>
+            <p className="photographer">photographer: {randomPhoto.name}</p>
           </div>
         </section>
       }
