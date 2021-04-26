@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Card.css'
 
 const Card = ({ url, altDescription, id, updateFavorites, favorites }) => {
@@ -24,3 +25,11 @@ const Card = ({ url, altDescription, id, updateFavorites, favorites }) => {
 }
 
 export default Card
+
+Card.propTypes = {
+  url: PropTypes.string,
+  altDescription: PropTypes.string,
+  id: PropTypes.string,
+  updateFavorites: PropTypes.func,
+  favorites: PropTypes.array
+};
