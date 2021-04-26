@@ -3,12 +3,10 @@ export const scrubRandomData = (randomMovieData) => {
     altDescription: randomMovieData.alt_description, name: randomMovieData.user.name, 
     download: randomMovieData.links.download + '?force=true'
   }
-  console.log('randomData',trimmedData)
   return trimmedData;
 }
 
 export const scrubSearchData = (searchData) => {
-
   const trimmedData = searchData.results.map(result => {
     const reducedResult = {id: result.id, url: result.urls.regular, 
       altDescription: result.alt_description, name: result.user.name, 
@@ -17,6 +15,5 @@ export const scrubSearchData = (searchData) => {
     return reducedResult
   })
 
-  console.log('searchData', trimmedData)
   return trimmedData;
 }
