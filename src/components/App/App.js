@@ -82,17 +82,27 @@ class App extends Component {
     return (
       <main>
 
-        <Nav clearSearchResults={this.clearSearchResults} error={this.state.error} searchForPictures={this.searchForPictures}/>
+        <Nav clearSearchResults={this.clearSearchResults} 
+          error={this.state.error} 
+          searchForPictures={this.searchForPictures}
+        />
 
         <Route exact path="/"
           render={() => 
-            <LandingPage favorites={this.state.favorites} message={this.state.message} searchResults={this.state.searchResults} updateFavorites={this.updateFavorites} randomPhoto={this.state.randomPhoto}/>
+            <LandingPage favorites={this.state.favorites} 
+              message={this.state.message} 
+              searchResults={this.state.searchResults} 
+              updateFavorites={this.updateFavorites} 
+              randomPhoto={this.state.randomPhoto}
+            />
           }
         />
 
         <Route exact path="/favorites"
           render={() => 
-            <Favorites favorites={this.state.favorites} updateFavorites={this.updateFavorites}/>
+            <Favorites favorites={this.state.favorites} 
+              updateFavorites={this.updateFavorites}
+            />
           }
         />
         

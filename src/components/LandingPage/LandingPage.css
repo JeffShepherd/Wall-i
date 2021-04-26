@@ -12,8 +12,9 @@
 }
 
 .random-image {
-  height: 100%;
-  width: 70%;
+  height: 98%;
+  width: 98%;
+  margin: auto;
 }
 
 .card-container {
@@ -27,4 +28,19 @@
 .search-message {
   text-align: center;
   padding-top: 20%;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .random-image {
+    height: 95%;
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .random-image {
+    height: 98%;
+    width: 70%;
+  }
 }
