@@ -1,5 +1,6 @@
 import React from 'react'
 import './LandingPage.css'
+import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 
 
@@ -47,4 +48,12 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
 }
 
 export default LandingPage
+
+LandingPage.propTypes = {
+  message: PropTypes.string,
+  updateFavorites: PropTypes.func,
+  randomPhoto: PropTypes.object,
+  searchResults: PropTypes.array,
+  favorites: PropTypes.array
+};
 
