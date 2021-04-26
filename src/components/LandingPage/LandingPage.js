@@ -28,11 +28,14 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
 
       {!searchResults.length && !message && 
         <section className="random-image-container">
-          <img className="random-image" 
-            id={randomPhoto.id}
-            src={randomPhoto.url} 
-            alt={randomPhoto.altDescription}
-          />
+          <div className="overlay-container">
+            <img className="random-image" 
+              id={randomPhoto.id}
+              src={randomPhoto.url} 
+              alt={randomPhoto.altDescription}
+            />
+            <h2>test</h2>
+          </div>
         </section>
       }
 

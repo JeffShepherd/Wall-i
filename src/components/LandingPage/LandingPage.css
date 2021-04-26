@@ -8,13 +8,21 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 }
 
-.random-image {
+.overlay-container {
+  position: relative;
   height: 98%;
   width: 98%;
   margin: auto;
+
+}
+
+.random-image {
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 .card-container {
@@ -31,15 +39,24 @@
   color: white;
 }
 
+
+
+h2 {/* test only */
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @media only screen and (min-width: 768px) {
-  .random-image {
+  .overlay-container {
     height: 95%;
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 1050px) {
-  .random-image {
+  .overlay-container {
     height: 98%;
     width: 70%;
   }
