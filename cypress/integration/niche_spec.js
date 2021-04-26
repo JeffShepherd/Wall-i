@@ -35,6 +35,46 @@ describe('Home page', () => {
       .url().should('eq', 'http://localhost:3000/favorites')
   })
 
+  it('Should be able to favorite the landing page photo', () => {
+    cy.get('button[id=uYA3q_83I5U]')
+      .click()
+    cy.get('.favorite-link').click()
+    cy.get('.card')
+      .find('img')
+      .should('have.attr', 'alt')
+      .should('include', 'man in black suit jacket beside man in black suit')
+  })
+
+  it('Should show the photographer\'s name on the landing page photo', () => {
+    cy.get('.photographer')
+      .contains('Jonathan Petit')
+  })
+
+  it('Should have an icon that downloads the photo', () => {
+    cy.get('.download-button')
+     .should('have.attr', 'href')
+      .should('include', 'https://unsplash.com/photos/uYA3q_83I5U/download?force=true')
+  })
+
+  it('Should have a button that displays another random photo', () => {
+    cy.fixture('random2.json')
+    .then(random2Data => {
+      cy.intercept(
+        'GET',
+        `https://api.unsplash.com/photos/random/?client_id=${Cypress.env('KEY')}&orientation=squarish`,
+        { 
+          statusCode: 200,
+          body: random2Data
+        }
+      )
+    })
+
+    cy.get('.get-random-button')
+      .click()
+    cy.get('img[id=9X8j4ppcUPI]')
+      .should('be.visible')
+  })
+
 })
 
 
@@ -72,7 +112,7 @@ describe('Searching and favoriting', () => {
       .should('have.length', 10)
   })
 
-  it('Should be able to favorite a photo and view it in the favorites section', () => {
+  it('Should be able to favorite a photo from a search and view it in the favorites section', () => {
     cy.get('button[id=giBrgSp9KW4]')
       .click()
     cy.get('.favorite-link').click()
