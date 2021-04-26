@@ -13,20 +13,22 @@
 }
 
 /* test only */
-.favorite-button-red {
+.favorite-button {
   background-color: transparent;
-  color: red;
   outline: none;
   border: none;
+}
+
+/* .favorite-button:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+} */
+
+.favorite-button-red {
+  color: red;
 }
 
 .favorite-button-white {
-  background-color: transparent;
   color: white;
-  outline: none;
-  border: none;
 }
 
-p {
-  color: white;
-}

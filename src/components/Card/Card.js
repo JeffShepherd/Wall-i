@@ -3,17 +3,16 @@ import './Card.css'
 
 const Card = ({ url, altDescription, id, updateFavorites, favorites }) => {
 
-  // const returnClass = () => {
-  //   const 
-  // }
+  const returnClass = () => {
+    const matches = favorites.filter(fav => id === fav.id)
 
-  // const test = favorites.filter(fav => id === fav.id)
+    if(matches.length) {
+      return 'favorite-button favorite-button-red'
+    } else {
+      return 'favorite-button favorite-button-white'
+    }
+  }
 
-    // if(test.length) {
-    //   heartButton = <button className="favorite-button" id={id} onClick={(event) => updateFavorites(event)}>❤</button>
-    // } else {
-    //   heartButton = <button className="favorite-button" id={id} onClick={(event) => updateFavorites(event)}>♡</button>
-    // }
     
   return (
     <article className="card">
