@@ -23,22 +23,27 @@ describe('Home page', () => {
   })
 
   it('Should have a favorites button', () => {
-    cy.get('.random-favorite-button').contains('❤')
+    cy.get('.random-favorite-button')
+      .contains('❤')
   })
 
   it('Should reflect a form with a search button', () => {
-    cy.get('form').children().should('have.length', 2)
+    cy.get('form')
+      .children()
+      .should('have.length', 2)
   })
 
   it('Should update the URL when clicking favorites', () => {
-    cy.get('.favorite-link').click()
+    cy.get('.favorite-link')
+      .click()
       .url().should('eq', 'http://localhost:3000/favorites')
   })
 
   it('Should be able to favorite the landing page photo', () => {
     cy.get('button[id=uYA3q_83I5U]')
       .click()
-    cy.get('.favorite-link').click()
+    cy.get('.favorite-link')
+      .click()
     cy.get('.card')
       .find('img')
       .should('have.attr', 'alt')
@@ -107,15 +112,17 @@ describe('Searching and favoriting', () => {
       .type('fish{enter}')
   })
 
-  it('Should display a card for each result in the results property', () => {
-    cy.get('.card-container').children()
+  it('Should display a card for each result that the search request returns', () => {
+    cy.get('.card-container')
+      .children()
       .should('have.length', 10)
   })
 
   it('Should be able to favorite a photo from a search and view it in the favorites section', () => {
     cy.get('button[id=giBrgSp9KW4]')
       .click()
-    cy.get('.favorite-link').click()
+    cy.get('.favorite-link')
+      .click()
     cy.get('.card')
       .find('img')
       .should('have.attr', 'alt')
@@ -127,7 +134,8 @@ describe('Searching and favoriting', () => {
       .click()
     cy.get('button[id=1AjxqINfBYs]')
       .click()
-    cy.get('.favorite-link').click()
+    cy.get('.favorite-link')
+      .click()
     cy.get('.card')
       .find('img')
       .should('have.attr', 'alt')
@@ -137,7 +145,8 @@ describe('Searching and favoriting', () => {
   it('Should be able to unfavorite a photo', () => {
     cy.get('button[id=giBrgSp9KW4]')
       .click()
-    cy.get('.favorite-link').click()
+    cy.get('.favorite-link')
+      .click()
     cy.get('button[id=giBrgSp9KW4]')
       .click()
     cy.get('.card')
@@ -146,8 +155,26 @@ describe('Searching and favoriting', () => {
       .contains('no favorites added yet')
   })
 
-})
+  it('Should be able to download a photo from a favorited photo in favorites view', () => {
+    cy.get('button[id=giBrgSp9KW4]')
+      .click()
+    cy.get('.favorite-link')
+      .click()
+    cy.get('.download-button-card')
+      .should('have.attr', 'href')
+      .should('include', 'https://unsplash.com/photos/giBrgSp9KW4/download?force=true')
+  })
 
+  it('Should be able to view the photographer from a favorited photo in favorites view', () => {
+    cy.get('button[id=giBrgSp9KW4]')
+      .click()
+    cy.get('.favorite-link')
+      .click()
+    cy.get('.photographer-card')
+      .contains('Niklas Du')
+  })
+
+})
 
 
 describe('Sad paths', () => {
@@ -180,7 +207,7 @@ describe('Sad paths', () => {
     })
   })
 
-  it('Should show an error message when the random photo API request fails', () => {
+  it('Should show an error message when the searc API request fails', () => {
 
     cy.intercept({
       method: 'GET',
