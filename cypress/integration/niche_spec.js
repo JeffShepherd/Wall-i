@@ -38,21 +38,50 @@ describe('Home page', () => {
 })
 
 
-// describe('Sad paths', () => {
+describe('Sad paths', () => {
 
-//   beforeEach(() => {
-//     cy.fixture('random.json')
-//     .then(randomData => {
-//       cy.intercept(
-//         'GET',
-//         `https://api.unsplash.com/photos/random/?client_id=${Cypress.env('KEY')}&orientation=squarish`,
-//         { 
-//           statusCode: 200,
-//           body: randomData
-//         }
-//       )
-//     })
-//     cy.visit('http://localhost:3000/')
-//   })
+  it('Should show an error message when the random photo API request fails', () => {
+    cy.intercept({
+      method: 'GET',
+      url: `https://api.unsplash.com/photos/random/?client_id=${Cypress.env('KEY')}&orientation=squarish`
+    },
+      {
+        statusCode: 500,
+        body:''
+      });
+    cy.visit('http://localhost:3000/')
+    cy.get('.error-message')
+      .contains('An error has occured. Please try again later.')
+  })
 
-// })
+  it('Should show an error message when the random photo API request fails', () => {
+    cy.fixture('random.json')
+    .then(randomData => {
+      cy.intercept(
+        'GET',
+        `https://api.unsplash.com/photos/random/?client_id=${Cypress.env('KEY')}&orientation=squarish`,
+        { 
+          statusCode: 200,
+          body: randomData
+        }
+      )
+    })
+
+    cy.intercept({
+      method: 'GET',
+      url: `https://api.unsplash.com/search/photos/?client_id=${Cypress.env('KEY')}&query=fish&orientation=portrait`
+    },
+      {
+        statusCode: 500,
+        body:''
+      });
+
+    cy.visit('http://localhost:3000/')
+    cy.get('.search-input')
+    .type('fish{enter}')
+
+    cy.get('.error-message')
+      .contains('An error has occured. Please try again later.')
+  })
+
+})
