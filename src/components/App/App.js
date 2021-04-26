@@ -86,7 +86,7 @@ class App extends Component {
 
         <Route exact path="/"
           render={() => 
-            <LandingPage message={this.state.message} searchResults={this.state.searchResults} updateFavorites={this.updateFavorites} randomPhoto={this.state.randomPhoto}/>
+            <LandingPage favorites={this.state.favorites} message={this.state.message} searchResults={this.state.searchResults} updateFavorites={this.updateFavorites} randomPhoto={this.state.randomPhoto}/>
           }
         />
 

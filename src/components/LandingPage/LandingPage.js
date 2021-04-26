@@ -3,7 +3,7 @@ import './LandingPage.css'
 import Card from '../Card/Card'
 
 
-const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message }) => {
+const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, favorites }) => {
 
   const searchCards = searchResults.map(result => {
     return (
@@ -13,6 +13,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message }) =
         url={result.url}
         altDescription={result.altDescription}
         id={result.id}
+        favorites={favorites}
       />
     )
   })

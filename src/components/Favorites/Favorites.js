@@ -3,7 +3,7 @@ import './Favorites.css'
 import Card from '../Card/Card'
 
 
-const Favorites = ({ favorites, updateFavorites }) => {
+const Favorites = ({ favorites, updateFavorites, favorites }) => {
 
   const favoriteCards = favorites.map(favorite => {
     return (
@@ -13,6 +13,7 @@ const Favorites = ({ favorites, updateFavorites }) => {
         url={favorite.url}
         altDescription={favorite.altDescription}
         id={favorite.id}
+        favorites={favorites}
       />
     )
   })

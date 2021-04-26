@@ -13,8 +13,18 @@
 }
 
 /* test only */
-.favorite-button {
-  background-color: white;
+.favorite-button-red {
+  background-color: transparent;
+  color: red;
+  outline: none;
+  border: none;
+}
+
+.favorite-button-white {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
 }
 
 p {
