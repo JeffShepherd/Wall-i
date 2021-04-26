@@ -18,7 +18,7 @@ const Nav = ({ searchForPictures, error, clearSearchResults }) => {
             <div className="search-nav-container">
               <Form  searchForPictures={searchForPictures} />
               <Link to={'/favorites'}>
-                <p>favorites</p>
+                <p className="favorite-link">favorites</p>
               </Link>
             </div>
           </div>

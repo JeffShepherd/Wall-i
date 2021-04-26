@@ -20,7 +20,7 @@ class Form extends Component {
     return (
       <form>
         
-        <input type="search" onChange={event => this.handleChange(event.target.value)}/>
+        <input className="search-input" type="search" onChange={event => this.handleChange(event.target.value)}/>
         <Link to={'/'}>
           <input type="submit" onClick={() => this.props.searchForPictures(this.state.searchQuery)}/>
         </Link>
