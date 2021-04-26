@@ -21,10 +21,15 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.loadRandomPhoto()
+  }
+
+  loadRandomPhoto = () => {
     getRandomPhoto()
       .then(data => this.setState({randomPhoto: data}))
       .catch(error => this.setState({error: 'An error has occured. Please try again later.'}))
   }
+
 
   searchForPictures = (searchValue) => {
     searchForPhotos(searchValue)
@@ -106,6 +111,7 @@ class App extends Component {
               updateFavorites={this.updateFavorites} 
               randomPhoto={this.state.randomPhoto}
               updateFavoritesForRandom={this.updateFavoritesForRandom}
+              loadRandomPhoto={this.loadRandomPhoto}
             />
           }
         />

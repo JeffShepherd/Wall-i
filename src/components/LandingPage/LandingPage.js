@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Card from '../Card/Card'
 
 
-const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, favorites, updateFavoritesForRandom }) => {
+const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, favorites, updateFavoritesForRandom, loadRandomPhoto }) => {
 
   const searchCards = searchResults.map(result => {
     return (
@@ -42,7 +42,7 @@ const LandingPage = ({ randomPhoto, searchResults, updateFavorites, message, fav
       {!searchResults.length && !message && 
         <section className="random-image-container">
           <div className="overlay-container">
-            <button className="get-random-button">get another random image</button>
+            <button onClick={() => loadRandomPhoto()} className="get-random-button">view another random image</button>
             <img className="random-image" 
               id={randomPhoto.id}
               src={randomPhoto.url} 
@@ -72,6 +72,7 @@ LandingPage.propTypes = {
   randomPhoto: PropTypes.object,
   searchResults: PropTypes.array,
   favorites: PropTypes.array,
-  updateFavoritesForRandom: PropTypes.func
+  updateFavoritesForRandom: PropTypes.func,
+  loadRandomPhoto: PropTypes.func
 };
 
