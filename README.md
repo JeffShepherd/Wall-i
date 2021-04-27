@@ -26,7 +26,7 @@ To create this application, I leveraged React, React Router, JavaScript, HTML, a
 
 ## Planning Resources
 
-* [GitHub Project Board](https://github.com/JeffShepherd/niche-audience/projects/1)
+* [GitHub Project Board](https://github.com/JeffShepherd/Wall-i/projects/1)
 * [Miro Board - Wireframes](https://miro.com/app/board/o9J_lI88SmI=/)
 
 
@@ -36,7 +36,7 @@ To create this application, I leveraged React, React Router, JavaScript, HTML, a
 Clone down this repository to your local machine:
 
 ```
-git clone git@github.com:JeffShepherd/niche-audience.git
+git clone git@github.com:JeffShepherd/Wall-i.git
 ```
 
 Then install the library dependencies by running:
