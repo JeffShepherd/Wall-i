@@ -78,16 +78,16 @@ Demonstrate mastery of the following:
 
 #### Landing Page Demo
 
-![landing-page](../assets/landingView.gif)
+![landing-page](./public/assets/landingView.gif)
 
 #### Favoriting Demo
 
-![favoriting](../assets/favoriting.gif)
+![favoriting](./public/assets/favoriting.gif)
 
 
 #### Mobile View
 
-![mobile-landing page](../assets/mobileView.png)
+![mobile-landing page](./public/assets/mobileView.png)
 
 
 
