@@ -17,9 +17,9 @@ A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audien
 
 ## Overview
 
-_Wall-i_ is a [Turing School of Software and Design](https://turing.io/) Module 3 final solo project. The challenge of this project: work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
+_Wall-i_ is the [Turing School of Software and Design](https://turing.io/) Module 3 final solo project. The challenge of this project: work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
 
-Given this challenge, I decided to create an application for finding, and downloading, awesome wallpapers for all devices. I chose this as I had always wished their was a simple app that accomplishes this goal. Wall-i allows a user to view random photos, as well as search by a specific topic. It also lets a user favorite any photo they see, and return to a list of their favorite photos at any time. If a user wishes to use the photo as the wallpaper, they can click the download link available on every photograph.
+Given this challenge, I decided to create an application for finding, and downloading, awesome wallpapers for any devics. I chose this as I had always wished there was a simple app that accomplishes this goal. Wall-i allows a user to view random photos, as well as search by a specific topic. It also lets a user favorite any photo they see, and return to a list of their favorite photos at any time. If a user wishes to use the photo as the wallpaper, they can click the download link available on every photo.
 
 To create this application, I leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As I worked, I also used Cypress for test-driven development of our application.
 
@@ -76,25 +76,19 @@ Demonstrate mastery of the following:
 <img alt="Cypress" src='https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white'/>
 
 ---
-## Features
-* Have the application suggest random photos by clicking a button
-* Search for a specific type of photo
-* Favorite any photo and view them in the favorites section
-* Click the download link on any photo to use it locally
+## Features UPDATE LINKS BELOW
 
-#### Application Demo
+#### Landing Page Demo
 
 ![demo-vid](./assets/rancidgif.gif)
 
-#### Landing Page
+#### Favoriting Demo
 
 ![landing-page](./assets/landing-page.png)
 
-#### Movie Details
-
-![details-page](./assets/details-page.png)
 
 #### Mobile View
+
 ![mobile-landing page](./assets/mobile-landing-page.png)
 
 
@@ -108,7 +102,7 @@ Demonstrate mastery of the following:
 
 
 ---
-## Wins UPDATE ME
+## Wins
 
 * Completing the project in a short time frame while interviewing and dealing with family emergencies
 * Achieving elegant simplicity in design (as a non-designer)
@@ -117,7 +111,7 @@ Demonstrate mastery of the following:
 
 
 ---
-## Future Iterations UPDATE ME
+## Future Iterations
 
 * Display additional search results (pagination)
 * Allow search results to scroll over a static landing page view
