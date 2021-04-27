@@ -1,4 +1,4 @@
-# (app name here) UPDATE ME
+# Wall-i
 
 A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audience.html) by [Jeff Shepherd](https://github.com/JeffShepherd).
 
@@ -15,11 +15,13 @@ A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audien
 9. [Future Additions](#future-iterations)
 
 
-## Overview UPDATE ME
+## Overview
 
-This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different!
+_Wall-i_ is a [Turing School of Software and Design](https://turing.io/) Module 3 final solo project. The challenge of this project: work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
 
-_Rancid Tomatillos_ is a [Turing School of Software and Design](https://turing.io/) Module 3 paired project. The purpose of this project is to create a dynamic application that leverages an API to receive, and display, movie data. A user can search and filter a long list of movies, as well as view detailed information about a specific movie by clicking on it. To create this application, we leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As we worked, we used Cypress for test-driven development of our application.
+Given this challenge, I decided to create an application for finding, and downloading, awesome wallpapers for all devices. I chose this as I had always wished their was a simple app that accomplishes this goal. Wall-i allows a user to view random photos, as well as search by a specific topic. It also lets a user favorite any photo they see, and return to a list of their favorite photos at any time. If a user wishes to use the photo as the wallpaper, they can click the download link available on every photograph.
+
+To create this application, I leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As I worked, I also used Cypress for test-driven development of our application.
 
 
 
@@ -74,8 +76,11 @@ Demonstrate mastery of the following:
 <img alt="Cypress" src='https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white'/>
 
 ---
-## Features UPDATE ME
-
+## Features
+* Have the application suggest random photos by clicking a button
+* Search for a specific type of photo
+* Favorite any photo and view them in the favorites section
+* Click the download link on any photo to use it locally
 
 #### Application Demo
 
@@ -95,28 +100,25 @@ Demonstrate mastery of the following:
 
 
 ---
-## Challenges UPDATE ME
+## Challenges
 
-* 
 * Completing the project in a short time frame while interviewing and dealing with family emergencies
-* 
-* 
+* Deploying for the first time using environment variables
+* Unclear documentation for specific API features
 
 
 ---
 ## Wins UPDATE ME
 
-
-* Learning, and leveraging, multiple new technologies in a short amount of time
-* Utilizing new features of React Router to solve a challenging navigation issue
-* Optimizing performance of the aplication via architecture changes, API data scrubbing, and destructuring of objects
-* Ensuring we prioritize our learning over adding more features to this application
+* Completing the project in a short time frame while interviewing and dealing with family emergencies
+* Achieving elegant simplicity in design (as a non-designer)
+* Figuring out how to force a download of a photo on-click
+* Confidence with Cypress testing
 
 
 ---
 ## Future Iterations UPDATE ME
 
-* Deploy and use [our own Express app](https://github.com/JeffShepherd/movie-API/tree/main) for the endpoints holding the data we fetch.
-* Refactor the application, and our API, to allow a user to favorite a movie, and view their favorites at a later date.
-* Refactor `Form` to render two separate components: `Sort` and `Search`.
-* Add a link to the details page to display the movie trailer in a modal element.
+* Display additional search results (pagination)
+* Allow search results to scroll over a static landing page view
+
