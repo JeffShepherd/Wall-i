@@ -2,8 +2,6 @@
 
 A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audience.html) by [Jeff Shepherd](https://github.com/JeffShepherd).
 
-[Check out the deployed application](https://rancid---tomatillos.herokuapp.com/) UPDATE ME
-
 1. [Overview](#overview)
 2. [Planning Resources](#planning-resources)
 3. [Set Up](#setup-instructions)
@@ -80,16 +78,16 @@ Demonstrate mastery of the following:
 
 #### Landing Page Demo
 
-![landing-page](./assets/landingView.gif)
+![landing-page](../assets/landingView.gif)
 
 #### Favoriting Demo
 
-![favoriting](./assets/favoriting.gif)
+![favoriting](../assets/favoriting.gif)
 
 
 #### Mobile View
 
-![mobile-landing page](./assets/mobileView.png)
+![mobile-landing page](../assets/mobileView.png)
 
 
 
