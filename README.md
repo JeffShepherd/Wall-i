@@ -76,20 +76,20 @@ Demonstrate mastery of the following:
 <img alt="Cypress" src='https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white'/>
 
 ---
-## Features UPDATE LINKS BELOW
+## Features
 
 #### Landing Page Demo
 
-![demo-vid](./assets/rancidgif.gif)
+![landing-page](./assets/landingView.gif)
 
 #### Favoriting Demo
 
-![landing-page](./assets/landing-page.png)
+![favoriting](./assets/favoriting.png)
 
 
 #### Mobile View
 
-![mobile-landing page](./assets/mobile-landing-page.png)
+![mobile-landing page](./assets/mobileView.png)
 
 
 
