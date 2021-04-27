@@ -84,7 +84,7 @@ Demonstrate mastery of the following:
 
 #### Favoriting Demo
 
-![favoriting](./assets/favoriting.png)
+![favoriting](./assets/favoriting.gif)
 
 
 #### Mobile View
