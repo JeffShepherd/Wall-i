@@ -39,6 +39,18 @@ Clone down this repository to your local machine:
 git clone git@github.com:JeffShepherd/Wall-i.git
 ```
 
+CD into the new directory:
+
+```
+cd Wall-i
+```
+
+Create a .env file for the API key (***please reach out to me for the key***):
+
+```
+touch .env
+```
+
 Then install the library dependencies by running:
 
 ```
