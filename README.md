@@ -17,7 +17,7 @@ A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audien
 
 _Wall-i_ is the [Turing School of Software and Design](https://turing.io/) Module 3 final solo project. The challenge of this project: work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
 
-Given this challenge, I decided to create an application for finding, and downloading, awesome wallpapers for any devics. I chose this as I had always wished there was a simple app that accomplishes this goal. Wall-i allows a user to view random photos, as well as search by a specific topic. It also lets a user favorite any photo they see, and return to a list of their favorite photos at any time. If a user wishes to use the photo as the wallpaper, they can click the download link available on every photo.
+Given this challenge, I decided to create an application for finding, and downloading, awesome wallpapers for any device. I chose this as I had always wished there was a simple app that accomplishes this goal. Wall-i allows a user to view random photos, as well as search by a specific topic. It also lets a user favorite any photo they see, and return to a list of their favorite photos at any time. If a user wishes to use the photo as the wallpaper, they can click the download link available on every photo.
 
 To create this application, I leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As I worked, I also used Cypress for test-driven development of our application.
 
